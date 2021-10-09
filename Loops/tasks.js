@@ -26,10 +26,10 @@
 
 // задача 2
 
-let n = +prompt (`Введите число`);
-let summ = 0;
-let i = 0;
-for (; n>= i; ++i){
-    summ = i + summ;
-    console.log(summ);
-}
+// let n = +prompt (`Введите число`);
+// let summ = 0;
+// let i = 0;
+// for (; n>= i; ++i){
+//     summ = i + summ;
+//     console.log(summ);
+// }
