@@ -7,18 +7,6 @@
 // let i = 0;
 //     for (; i < 10; ++i ) {
 //         arr.push ([i]);
-//         let square = i * i;
-//         console.log (square);
-//     }
-//     console.log (typeof arr);
-//     console.log (arr);
-
-// Разобрать с индексоф
-
-// let arr = [];
-// let i = 0;
-//     for (; i < 10; ++i ) {
-//         arr.push ([i]);
 //             for (n= arr.indexOf ([i]); n === i; ++n) {
 //                 continue
 //             }
