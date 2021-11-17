@@ -94,34 +94,34 @@
 
 /////////////////////////////////////////////////////////////////////////////
 
-class Animal {
-    constructor (name, age) {
-        this.name = name;
-        this.age = age;
-    };
-    eat (a) {
-        return `${this.name} eats ${a}!`
-    };
-};
+// class Animal {
+//     constructor (name, age) {
+//         this.name = name;
+//         this.age = age;
+//     };
+//     eat (a) {
+//         return `${this.name} eats ${a}!`
+//     };
+// };
 
-const animal1 = new Animal (`Tusik`, 11);
-console.log (animal1.eat (`plov`));
+// const animal1 = new Animal (`Tusik`, 11);
+// console.log (animal1.eat (`plov`));
 
-class Human extends Animal {
-    constructor (job, age, name) {
-        super(name, age)
-        // аналог
-        // Animal.call(this, name, age)
-        this.job = job;
-    };
-    learn (technology) {
-        return `${this.name} learns ${technology}!`;
-    };
-};
+// class Human extends Animal {
+//     constructor (job, age, name) {
+//         super(name, age)
+//         // аналог
+//         // Animal.call(this, name, age)
+//         this.job = job;
+//     };
+//     learn (technology) {
+//         return `${this.name} learns ${technology}!`;
+//     };
+// };
 
-const h1 = new Human (`programmer`,23,`John`);
-console.log (h1.learn (`JS`));
-console.log (h1.eat (`buter`));
+// const h1 = new Human (`programmer`,23,`John`);
+// console.log (h1.learn (`JS`));
+// console.log (h1.eat (`buter`));
 
 
 
