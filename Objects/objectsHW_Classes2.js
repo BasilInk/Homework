@@ -21,61 +21,62 @@
 
 // Задача 1. Решение
 
-class House {
-    constructor (adress, maxApartments) {
-        this.adress = adress;
-        this.apartments = [];
-        this.maxApartments = maxApartments;
-    };
-    addAppartments (apartment) {
-        if (this.apartments.length < this.maxApartments 
-        && apartment.owner !== ``) {
-        this.apartments.push (apartment);
-        };
-    };
-};
+// class House {
+//     constructor (adress, maxApartments) {
+//         this.adress = adress;
+//         this.apartments = [];
+//         this.maxApartments = maxApartments;
+//     };
+//     addAppartments (apartment) {
+//         if (this.apartments.length < this.maxApartments 
+//         && apartment.owner !== ``
+//         && !this.apartments.some(({apartmentNumber}) => apartmentNumber === apartment.apartmentNumber)) {
+//         this.apartments.push (apartment);
+//         };
+//     };
+// };
 
-class Adress {
-    constructor (city, street, number) {
-        this.city = city;
-        this.street = street;
-        this.number = number;
-    };
-};
+// class Adress {
+//     constructor (city, street, number) {
+//         this.city = city;
+//         this.street = street;
+//         this.number = number;
+//     };
+// };
 
-class Apartment {
-    constructor (appartmentNumber, owner = ` `) {
-        this.appartmentNumber = appartmentNumber,
-        this.owner = owner
-    };
-    setOwner (name) {
-        this.owner = name;
-    };
-};
+// class Apartment {
+//     constructor (apartmentNumber, owner = ` `) {
+//         this.apartmentNumber = apartmentNumber,
+//         this.owner = owner
+//     };
+//     setOwner (name) {
+//         this.owner = name;
+//     };
+// };
 
-const adr1 = new Adress (`Barselona`, `Goloda`, 1);
-const adr2 = new Adress (`Minsk`, `M.Tanka`, 2);
-const adr3 = new Adress (`Moscow`, `Gorky Park`, 3);
+// const adr1 = new Adress (`Barselona`, `Galda`, 1);
+// const adr2 = new Adress (`Minsk`, `M.Tanka`, 2);
+// const adr3 = new Adress (`Moscow`, `Gorky Park`, 3);
 
-const house1 = new House (adr1, 3);
-const house2 = new House (adr2, 4);
-const house3 = new House (adr3, 5);
+// const house1 = new House (adr1, 3);
+// const house2 = new House (adr2, 4);
+// const house3 = new House (adr3, 5);
 
-const ap1 = new Apartment (1);
-const ap2 = new Apartment (2);
-const ap3 = new Apartment (3);
+// const ap1 = new Apartment (1);
+// const ap2 = new Apartment (2);
+// const ap3 = new Apartment (3);
 
-ap1.setOwner (`John`);
-ap2.setOwner (`Henry`);
-ap3.setOwner (`David`);
+// ap1.setOwner (`John`);
+// ap2.setOwner (`Henry`);
+// ap3.setOwner (`David`);
 
-house1.addAppartments(ap1);
-house1.addAppartments(ap2);
-house1.addAppartments(ap3);
+// house1.addAppartments(ap1);
+// house1.addAppartments(ap2);
+// house1.addAppartments(ap3);
 
-console.log (house1);
+// console.log (house1);
 
-// Задача 1 Решение 2
+// Задача 1 Решение 2 (от Владислава)
 
 // class Apartment {
 //     constructor (nomerKvartiry) {
@@ -141,6 +142,78 @@ console.log (house1);
 //     экрана(не может быть больше 8)) и Tablet(принимает имя и 
 //     диагональ экрана (не может быть меньше 8)), которые 
 //     наследуют от класса Device
+
+// Задача2. Решение
+
+// class Device {
+//     constructor (nameDevice, diagonal) {
+//         this.isOn = false;
+//         this.nameDevice = nameDevice;
+//         this.diagonal = diagonal;
+//     };
+
+//     switchDevice () {
+//         return this.isOn = true;
+//     };
+
+//     callSmbd (userName) {
+//         if (this.isOn == true) {
+//             return `${userName}`
+//         } else {alert (`Phone call is not possible!`)};
+//     };
+// };
+
+// const abon1 = new Device;
+
+// console.log (abon1.switchDevice());
+
+// console.log (abon1.callSmbd(`Zosya`));
+
+// const abon2 = new Device;
+
+// console.log (abon2.callSmbd(`Boris`));
+
+// class Smartphone extends Device {
+//     constructor (nameDevice, diagonal) {
+//         super (nameDevice, diagonal);
+//     };
+//     callSmartphone (namePhone, diag) {
+//         this.nameDevice = namePhone;
+//         this.diagonal = diag;
+//         if (this.diagonal <= 8) {
+//         console.log (`This ${namePhone} has a screen diagonal of ${diag} inches`)
+//         } else {console.log (`This ${namePhone} is not a smartphone`)};
+//     };
+// };
+
+// const smart1 = new Smartphone;
+
+// const smart2 = new Smartphone;
+
+// console.log (smart1.callSmartphone (`Sony`, 5));
+
+// console.log (smart2.callSmartphone (`LG`, 10));
+
+// class Tablet extends Device {
+//     constructor (nameDevice, diagonal) {
+//         super (nameDevice, diagonal);
+//     };
+//     callTablet (nameTablet, diag) {
+//         this.nameDevice = nameTablet;
+//         this.diagonal = diag;
+//         if (this.diagonal >= 9) {
+//         console.log (`This ${nameTablet} has a screen diagonal of ${diag} inches`)
+//         } else {console.log (`This ${nameTablet} is not a tablet`)};
+//     };
+// };
+
+// const tabl1 = new Tablet;
+
+// const tabl2 = new Tablet;
+
+// console.log (tabl1.callTablet (`Panasonic`, 10));
+
+// console.log (tabl2.callTablet (`Samsung`, 5));
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
