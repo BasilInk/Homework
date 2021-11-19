@@ -235,6 +235,85 @@
 // isConnected == false. Если заряд батареек == 0, то метод 
 // play вернет сообщение с требованием замены батареек
 
+// Задача 3. Решение
+
+class Battery {
+    constructor (type, energy = 100) {
+        this.type = type;
+        this.energy= energy;
+    };
+};
+
+const battery1 = new Battery (`b1`);
+const battery2 = new Battery (`b2`);
+
+class Device {
+    constructor (batteryType) {
+        this.batteryType = batteryType;
+    };
+    insertBattery (battery1Dev, battery2Dev) {
+        if (battery1Dev === battery1.type && battery2Dev === battery2.type) {
+            return `Batteries are inserted`
+        } else { return `Batteries are not inserted`};
+    };
+};
+
+const device1 = new Device;
+const device2 = new Device;
+
+console.log (device1.insertBattery (`b1`, `b2`));
+console.log (device1.insertBattery (`c1`, `c2`));
+
+class Gamepad extends Device {
+    constructor (batteryType, model, isConnected = false) {
+        super (batteryType);
+        this.model = model;
+        this.isConnected = isConnected;
+    };
+
+// спросить про 2 батарейки
+
+    connectTo (gamepadModel, deviceModel) {
+        this.model = gamepadModel;
+            if (this.isConnected == false
+            // && battery1.type === !undefined
+            // && battery2.type === !undefined
+            ) {
+            this.isConnected = true;
+            return `${gamepadModel} is connected to ${deviceModel}`
+            } else {return `${gamepadModel} cannot be connected to ${deviceModel}`
+        };
+    };
+
+    disconnect (gamepadModel, deviceModel) {
+        this.model = gamepadModel;
+        return `${gamepadModel} is disconnected from ${deviceModel}`;
+    };
+
+    play () {
+        if (battery1.energy == 0 || battery2.energy == 0) {
+            return `Сhange the batteries`;
+            } else {return `battery1 energy is ${en1-10} %, battery2 energy is ${en2-10} %`;
+        };
+    };
+};
+
+let en1 = battery1.energy;
+let en2 = battery2.energy;
+
+const gamepad1 = new Gamepad;
+
+// спросить, чтобы перезаписывало значение заряда
+
+console.log (gamepad1.play ());
+console.log (gamepad1.play ());
+
+console.log (gamepad1.connectTo (`PS`, `TV`));
+console.log (gamepad1.connectTo (`PS`, `TV`));
+console.log (gamepad1.disconnect (`PS`, `TV`));
+
+/////////////////////////////////////////////////////////////////////////////////
+
 // Z:\FRONT12\Javascript\PREPOD\objects
 
 // class Test {
