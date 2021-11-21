@@ -215,6 +215,48 @@
 
 // console.log (tabl2.callTablet (`Samsung`, 5));
 
+// Задача 2. Решение 2
+
+// class Device {
+//     constructor () {
+//         this.isOn = false;
+//     }
+
+//     callSmbd (who) {
+//         if (this.isOn) {
+//             console.log(`you are calling ${who}`);
+//         } else {
+//             console.log(`You cant call anyone`);
+//         }
+//     }
+
+//     switchDevice () {
+//         this.isOn = !this.isOn;
+//     }
+// }
+
+// class Smartphone extends Device {
+//     constructor (name, diag) {
+//         super();
+//         this.name = name;
+//         if (diag > 8) {
+//             this.diag = 8;
+//         } else {
+//             this.diag = diag;
+//         }
+//     }
+// }
+
+// class Samsung extends Smartphone {
+//     constructor (name, diag) {
+//         super(name, diag);
+//     }
+// }
+
+// const dev = new Device();
+// dev.switchDevice();
+// dev.callSmbd('Oleg');
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // 3. Создать класс Battery, который инициализирует поля type,
@@ -271,13 +313,11 @@
 //         this.isConnected = isConnected;
 //     };
 
-// // спросить про 2 батарейки
-
 //     connectTo (gamepadModel, deviceModel) {
 //         this.model = gamepadModel;
-//             if (this.isConnected == false
-//             // && battery1.type === !undefined
-//             // && battery2.type === !undefined
+//             if (this.isConnected === false
+//             && battery1.type !== undefined
+//             && battery2.type !== undefined
 //             ) {
 //             this.isConnected = true;
 //             return `${gamepadModel} is connected to ${deviceModel}`
@@ -293,17 +333,14 @@
 //     play () {
 //         if (battery1.energy == 0 || battery2.energy == 0) {
 //             return `Сhange the batteries`;
-//             } else {return `battery1 energy is ${en1-10} %, battery2 energy is ${en2-10} %`;
+//             } else {return `battery1 energy is ${battery1.energy-10} %, battery2 energy is ${battery2.energy-10} %`;
 //         };
 //     };
 // };
 
-// let en1 = battery1.energy;
-// let en2 = battery2.energy;
-
 // const gamepad1 = new Gamepad;
 
-// спросить, чтобы перезаписывало значение заряда
+// // спросить, чтобы перезаписывало значение заряда
 
 // console.log (gamepad1.play ());
 // console.log (gamepad1.play ());
@@ -311,6 +348,96 @@
 // console.log (gamepad1.connectTo (`PS`, `TV`));
 // console.log (gamepad1.connectTo (`PS`, `TV`));
 // console.log (gamepad1.disconnect (`PS`, `TV`));
+
+// Задача 3. Решение 2
+
+// class Battery {
+//     constructor (type) {
+//         this.type = type;
+//         this.energy = 100;
+//     }
+// }
+
+// class Device {
+//     constructor (type) {
+//         this.batteryType = type;
+//         this.btrs = [];
+//     }
+
+//     insertBattery (b1,b2) {
+//         if (b1.type !== this.batteryType
+//             || b2.type !== this.batteryType) {
+//                 console.error(`you cant insert type because batteries have different types: ${b1.type} and ${b2.type}`);
+//         } else {
+//             this.btrs.push(b1,b2);
+//         }
+//     }
+// }
+
+// class Gamepad extends Device {
+//     constructor (model, type) {
+//         super(type);
+//         this.model = model;
+//         this.isConnected = false;
+//     }
+
+//     connectTo (deviceName) {
+//         if (!this.isConnected       
+//             && this.isAllBatteriesCharged()) {
+//                 this.isConnected = true;
+//                 console.log('connected! to ' + deviceName);
+//         } else {
+//             console.log('could not connect!');
+//         }
+//     }
+    
+//     disconnect () {
+//         this.isConnected = false;
+//         console.log('Device disconnected!');
+//     }
+
+//     play () {
+//         if (this.btrs.length > 1 
+//             && this.isAllBatteriesCharged() ) {
+//             console.log('you play game!');
+//             this.btrs = this.btrs.map((btr) => ({
+//                 ...btr,
+//                 energy: btr.energy <= 0 ? 0 : btr.energy - 10
+//             }))
+//         } else {
+//             console.error('you cant play due to batteries, change them!');
+//         }
+//     }
+
+//     isAllBatteriesCharged () {
+//         return this.btrs.every(({energy}) => energy > 0 );
+//     }
+// }
+
+// const b1 = new Battery ('AAA');
+// const b2 = new Battery ('AAA');
+// const b3 = new Battery ('BBB');
+
+// const ps5gamepad = new Gamepad('ps5', 'AAA');
+
+// ps5gamepad.insertBattery(b1,b2);
+// ps5gamepad.connectTo('ps5');
+// ps5gamepad.disconnect();
+// ps5gamepad.connectTo('xbox');
+// ps5gamepad.play();
+// ps5gamepad.play();
+// ps5gamepad.play();
+// ps5gamepad.play();
+// ps5gamepad.play();
+// ps5gamepad.play();
+// ps5gamepad.play();
+// ps5gamepad.play();
+// ps5gamepad.play();
+// ps5gamepad.play();
+// ps5gamepad.play();
+// ps5gamepad.play();
+// ps5gamepad.play();
+// ps5gamepad.play();
 
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -333,3 +460,103 @@
 // that.a = 2;
 // that.b = that.number;
 
+///////////////////////////////////////////////////////////////////////////////////
+
+// Задача 4.
+
+
+
+// Задача 4. Решение
+
+// class Human {
+//     constructor (name, age) {
+//         this.name = name,
+//         this.age = age
+//     };
+
+//     sayHi () {
+//         console.log (`Hi ${this.name}!`);
+//     }
+// };
+
+// class Programmer extends Human {
+//     constructor (name, age, technologies = []) {
+//         super (name, age);
+//         this.technologies = technologies;
+//     };
+    
+//     startCoding () {
+//         console.log (`${this.name} is coding using ${this.technologies}!`);
+//     };
+// };
+
+// const programmer1 = new Programmer (`John`, 31, [`Html`,`CSS`,`JS`]);
+// const programmer2 = new Programmer (`Peter`, 28, [`JAVA`]);
+
+// programmer1.sayHi ();
+
+// programmer1.startCoding ();
+// programmer2.startCoding ();
+
+// class Sportsman extends Human {
+//     constructor (medals, ...args) {
+//         super(...args);
+//         this.medals = medals;
+//     };
+// };
+
+// class FootballPlayer extends Sportsman {
+//     constructor (team = ``, ...args) {
+//         super (...args);
+//         this.team = team;
+//     };
+//     run (speed) {
+//         console.log (`${this.name} is running ${speed} kmph`);
+//     };
+// };
+
+// const footballPlayer1= new FootballPlayer (`Barselona`, 5, `Frank`, 28);
+
+// footballPlayer1.run (15);
+
+// class HockeyPlayer extends Sportsman {
+//     constructor (weight, ...args) {
+//         super (...args);
+//         this.weight = weight;
+//     };
+//     pushOpponent (opponentName) {
+//         console.log (`${this.name} pushed ${opponentName} and used ${this.weight} kgs`);
+//     };
+// };
+
+// const hockeyPlayer1 = new HockeyPlayer (120, 3, `Brandon`, 33);
+
+// hockeyPlayer1.pushOpponent (`Razor`);
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// Геттер и Сеттер
+
+// class Human {
+//     constructor () {
+//         this._age = 0;
+//     };
+
+//     set age (number) {
+//         if (number < 120 && number > 0) {
+//             this._age = number;
+//         };
+//     };
+
+//     get age () {
+//         return this._age
+//     };
+// };
+
+// const h1 = new Human ();
+
+// h1.age = 31;
+
+// console.log (h1);
+
+// console.log(h1.age);
