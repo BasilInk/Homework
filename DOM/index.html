@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <style>
+        .item {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 30px;
+            padding: 10px;
+            cursor: pointer;
+            list-style-type: none;
+            transition: all 0.5s  ease;
+        }
+ 
+        .item:hover {
+            background-color: lightgray;
+        }
+ 
+        .item.active {
+            background-color: #2d2d2d;
+            color: #fff;
+        }
+     </style>
+ </head>
+ <body>
+     <ul id="menu">
+         <li class='item test'>one</li>
+         <li class='item test'>two</li>
+         <li class='item test'>three</li>
+     </ul>
+ 
+     <ol id="shop" style="border: 1px solid black">
+         <li class="second-item">item1</li>
+         <li class="second-item">item2</li>
+         <li class="second-item">item3</li>
+         <li class="second-item">item4</li>
+     </ol>
+    <script src="consp.js"></script>
+    <script src="consp090122.js"></script>
+</body>
+</html>

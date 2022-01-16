@@ -8,46 +8,47 @@
 // у всех лад должно быть вычисляемое свойтво age 
 // age не должен быть доступен для ЗАПИСИ
 
-const date = new Date();
-console.dir(date.getFullYear());
+// const date = new Date();
+// console.dir(date.getFullYear());
 
-class Lada {
-    static #models = [`Vesta`,`Xray`,`Niva`,`Granta`,`Priora`];
-    static addModel = function (model) {
-        this.#models.push(model);
-    }
-    #price = 0;
+// class Lada {
+//     static #models = [`Vesta`,`Xray`,`Niva`,`Granta`,`Priora`];
+//     static addModel = function (model) {
+//         this.#models.push(model);
+//         console.log (this.#models);
+//     }
+//     #price = 0;
 
-    constructor (model, price, yearOfProduction) {
-        this.model = Lada.#models.includes(model) ? model : undefined ;
-        this.#price = price <= 0 ? 0 : price;
-        this.yearOfProduction = yearOfProduction;
-        this._age = date.getFullYear() - yearOfProduction;
-    };
+//     constructor (model, price, yearOfProduction) {
+//         this.model = Lada.#models.includes(model) ? model : undefined ;
+//         this.#price = price <= 0 ? 0 : price;
+//         this.yearOfProduction = yearOfProduction;
+//         this._age = date.getFullYear() - yearOfProduction;
+//     };
 
-    set price (price) {
-        this.#price = price <= 0 ? this.price : price;
-    };
+//     set price (price) {
+//         this.#price = price <= 0 ? this.price : price;
+//     };
 
-    get price () {
-        return this.#price + `$`;
-    };
+//     get price () {
+//         return this.#price + `$`;
+//     };
 
-    get age () {
-        return this._age;
-    };
-};
+//     get age () {
+//         return this._age;
+//     };
+// };
 
 
-const car1 = new Lada (`Niva`,10000,2010);
+// const car1 = new Lada (`Niva`,10000,2010);
 
-car1.age = 34;
+// car1.age = 34;
 
-console.log (car1);
+// console.log (car1);
 
-Lada.addModel (`Kalina`);
+// Lada.addModel (`Kalina`);
 
-console.log (Lada);
+// console.log (Lada);
 
 
 // Ошибки/////////////////////////////////////////////////////////////
@@ -115,3 +116,7 @@ console.log (Lada);
 // }
 
 // console.log(lada);
+
+// Домашка 3. От Владислава
+// https://github.com/REGEMLER
+// https://github.com/AVVenn/homework
